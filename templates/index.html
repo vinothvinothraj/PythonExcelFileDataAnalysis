@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Excel Sample Analyzer</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
   <div class="container">
     <h1>Excel Sample Analyzer</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <label for="file">Choose a Excel File:</label>
-      <input type="file" name="file" accept=".xlsx" required>
-      <button type="submit">Upload & Process</button>
-    </form>
+    <form action="/upload" method="post" enctype="multipart/form-data"> <label for="file">Choose Excel File:</label>
+      <input type="file" name="file" accept=".xlsx" required> <button type="submit">Upload & Process</button> </form>
   </div>
-
-  <script>
-    const fileInput = document.getElementById('file');
-    const processBtn = document.getElementById('processBtn');
-    const customBtn = document.querySelector('.custom-file-btn');
-
-    fileInput.addEventListener('change', function () {
-      if (fileInput.files.length > 0) {
-        customBtn.style.display = "none";   // hide choose file button
-        processBtn.style.display = "inline-block"; // show process button
-      }
-    });
-  </script>
 </body>
+
 </html>
