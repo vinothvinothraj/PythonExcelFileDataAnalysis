@@ -11,7 +11,7 @@ body {
     padding: 30px;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -20,13 +20,11 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* hide the ugly default file input */
 input[type="file"] {
-    display: none;
+    margin: 15px 0;
 }
 
-/* custom button for file input */
-.custom-file-btn {
+button {
     padding: 10px 20px;
     border: none;
     background: #007bff;
@@ -34,25 +32,8 @@ input[type="file"] {
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
-    display: inline-block;
 }
 
-.custom-file-btn:hover {
+button:hover {
     background: #0056b3;
-}
-
-/* process button (hidden initially) */
-#processBtn {
-    padding: 10px 20px;
-    border: none;
-    background: #28a745;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: none;
-}
-
-#processBtn:hover {
-    background: #1e7e34;
 }
