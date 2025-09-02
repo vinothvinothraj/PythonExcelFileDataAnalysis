@@ -1,5 +1,5 @@
 # utils/models.py
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, Double
 from sqlalchemy.dialects.mysql import DATETIME as MySQLDATETIME
 from config import Base
 from datetime import datetime
@@ -25,18 +25,19 @@ class Data(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     file_id = Column(Integer, ForeignKey("files.id"), nullable=False)
     time = Column(MySQLDATETIME(fsp=6), nullable=False)
-    conductivity = Column(Float)
-    temperature = Column(Float)
-    pressure = Column(Float)
-    sea_pressure = Column(Float)
-    # add other sensor columns as needed
-    dissolved_o2_saturation = Column(Float)
-    chlorophyll_a = Column(Float)
-    fdom = Column(Float)
-    turbidity = Column(Float)
-    depth = Column(Float)
-    salinity = Column(Float)
-    speed_of_sound = Column(Float)
-    specific_conductivity = Column(Float)
-    density_anomaly = Column(Float)
-    dissolved_o2_concentration = Column(Float)
+
+    # Sensor columns (DOUBLE for high precision, can store negatives, no constraints)
+    conductivity = Column(Double)
+    temperature = Column(Double)
+    pressure = Column(Double)
+    sea_pressure = Column(Double)
+    dissolved_o2_saturation = Column(Double)
+    chlorophyll_a = Column(Double)
+    fdom = Column(Double)
+    turbidity = Column(Double)
+    depth = Column(Double)
+    salinity = Column(Double)
+    speed_of_sound = Column(Double)
+    specific_conductivity = Column(Double)
+    density_anomaly = Column(Double)
+    dissolved_o2_concentration = Column(Double)
