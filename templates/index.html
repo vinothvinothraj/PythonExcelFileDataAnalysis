@@ -9,10 +9,28 @@
   <div class="container">
     <h1>Excel Sample Analyzer</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
-      <label for="file">Choose Excel File:</label>
-      <input type="file" name="file" accept=".xlsx" required>
-      <button type="submit">Upload & Process</button>
+      <!-- hidden file input -->
+      <input type="file" id="file" name="file" accept=".xlsx" required>
+
+      <!-- custom styled button -->
+      <label for="file" class="custom-file-btn">Choose Excel File</label>
+
+      <!-- hidden initially -->
+      <button type="submit" id="processBtn">Upload & Process</button>
     </form>
   </div>
+
+  <script>
+    const fileInput = document.getElementById('file');
+    const processBtn = document.getElementById('processBtn');
+    const customBtn = document.querySelector('.custom-file-btn');
+
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        customBtn.style.display = "none";   // hide choose file button
+        processBtn.style.display = "inline-block"; // show process button
+      }
+    });
+  </script>
 </body>
 </html>
