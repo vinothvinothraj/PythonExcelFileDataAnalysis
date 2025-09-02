@@ -14,5 +14,18 @@
       <button type="submit">Upload & Process</button>
     </form>
   </div>
+
+  <script>
+    const fileInput = document.getElementById('file');
+    const processBtn = document.getElementById('processBtn');
+    const customBtn = document.querySelector('.custom-file-btn');
+
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        customBtn.style.display = "none";   // hide choose file button
+        processBtn.style.display = "inline-block"; // show process button
+      }
+    });
+  </script>
 </body>
 </html>

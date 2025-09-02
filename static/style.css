@@ -20,11 +20,13 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* hide the ugly default file input */
 input[type="file"] {
-    margin: 15px 0;
+    display: none;
 }
 
-button {
+/* custom button for file input */
+.custom-file-btn {
     padding: 10px 20px;
     border: none;
     background: #007bff;
@@ -32,8 +34,25 @@ button {
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
+    display: inline-block;
 }
 
-button:hover {
+.custom-file-btn:hover {
     background: #0056b3;
+}
+
+/* process button (hidden initially) */
+#processBtn {
+    padding: 10px 20px;
+    border: none;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: none;
+}
+
+#processBtn:hover {
+    background: #1e7e34;
 }
